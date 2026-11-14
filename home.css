@@ -1,0 +1,199 @@
+.home-main {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 18px 0 54px
+}
+
+.toolbar {
+    padding: 13px 0;
+    border-top: 0
+}
+
+.home-lessons {
+    padding-top: 25px
+}
+
+.section-heading {
+    align-items: baseline;
+    margin-bottom: 8px
+}
+
+.section-heading h1 {
+    margin: 0;
+    font: 400 30px/1.25 "Playfair Display", Georgia, serif
+}
+
+.section-heading span {
+    font-size: 12px
+}
+
+.lesson-list {
+    display: block;
+    border-top: 1px solid var(--line)
+}
+
+.lesson-entry {
+    display: grid;
+    grid-template-columns: 66px minmax(0, 1fr) 22px;
+    gap: 22px;
+    align-items: start;
+    padding: 21px 4px 23px;
+    border-bottom: 1px solid var(--line);
+    color: inherit;
+    text-decoration: none;
+    transition: padding .18s, color .18s
+}
+
+.lesson-entry:hover,
+.lesson-entry:focus-visible {
+    padding-right: 0;
+    padding-left: 9px;
+    color: var(--brown);
+    outline: none
+}
+
+.entry-number {
+    padding-top: 4px;
+    color: var(--clay);
+    font: 15px "Playfair Display", Georgia, serif;
+    letter-spacing: .04em
+}
+
+.entry-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 13px;
+    margin-bottom: 6px;
+    color: var(--muted);
+    font-size: 12px;
+    letter-spacing: .12em;
+    text-transform: uppercase
+}
+
+.entry-meta .entry-category {
+    color: var(--brown);
+    font-weight: 700
+}
+
+.lesson-entry h2 {
+    margin: 0;
+    font: 400 28px/1.25 "Playfair Display", Georgia, serif;
+    transition: color .18s
+}
+
+.lesson-entry:hover h2,
+.lesson-entry:focus-visible h2 {
+    color: var(--clay)
+}
+
+.entry-description {
+    max-width: 720px;
+    margin: 6px 0 0;
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.7
+}
+
+.entry-bottom {
+    margin-top: 9px;
+    color: var(--muted);
+    font-size: 13px
+}
+
+.entry-arrow {
+    align-self: center;
+    color: var(--clay);
+    font-size: 23px;
+    transition: transform .18s
+}
+
+.lesson-entry:hover .entry-arrow,
+.lesson-entry:focus-visible .entry-arrow {
+    transform: translateX(3px)
+}
+
+.home-lessons .status,
+.home-lessons .empty {
+    padding: 24px 10px;
+    text-align: left;
+    font-size: 16px
+}
+
+.home-lessons .status.error {
+    text-align: left
+}
+
+@media(max-width:850px) {
+    .home-main {
+        padding-top: 12px
+    }
+}
+
+@media(max-width:600px) {
+    .home-main {
+        padding: 8px 0 36px
+    }
+
+    .toolbar {
+        align-items: stretch;
+        flex-direction: column;
+        gap: 9px;
+        padding: 10px 0 14px
+    }
+
+    .filters {
+        gap: 6px
+    }
+
+    .filter-btn {
+        padding: 6px 11px
+    }
+
+    .search-wrap {
+        width: 100%
+    }
+
+    .home-lessons {
+        padding-top: 19px
+    }
+
+    .section-heading h1 {
+        font-size: 27px
+    }
+
+    .lesson-entry {
+        grid-template-columns: 43px minmax(0, 1fr) 17px;
+        gap: 12px;
+        padding: 17px 2px 19px
+    }
+
+    .entry-number {
+        padding-top: 3px;
+        font-size: 13px
+    }
+
+    .entry-meta {
+        gap: 5px 9px;
+        margin-bottom: 5px;
+        font-size: 12px
+    }
+
+    .lesson-entry h2 {
+        font-size: 23px
+    }
+
+    .entry-description {
+        margin-top: 5px;
+        font-size: 14px;
+        line-height: 1.65
+    }
+
+    .entry-bottom {
+        margin-top: 7px;
+        font-size: 12px
+    }
+
+    .entry-arrow {
+        font-size: 20px
+    }
+}
