@@ -43,7 +43,7 @@
     const chinese = pick(item, 'example_ZH', 'exampleZh', 'Example_ZH');
     const wordButton = speechSupported ? `<button class="speech-button" type="button" data-speech="${esc(word)}" aria-label="Listen to ${esc(word)}" title="Listen to word">${speechIcon}</button>` : '';
     const exampleButton = speechSupported && english ? `<button class="speech-button example-speech" type="button" data-speech="${esc(english)}" aria-label="Listen to example sentence" title="Listen to example sentence">${speechIcon}</button>` : '';
-    return `<article class="reading-card"><div class="vocab-primary"><h4>${esc(word)}</h4>${ipaDisplay ? `<span class="ipa" lang="en-fonipa">${esc(ipaDisplay)}</span>` : ''}${wordButton}</div><div class="reading-meaning">${pos ? `<span class="part-of-speech">${esc(pos)}</span>` : ''}${meaning ? `<span>${esc(meaning)}</span>` : ''}</div>${english ? `<div class="example-line"><p class="example-en">${esc(english)}</p>${exampleButton}</div>` : ''}${chinese ? `<p class="example-zh" lang="zh-Hant">${esc(chinese)}</p>` : ''}</article>`;
+    return `<article class="reading-card"><div class="vocab-primary"><div class="vocab-label"><h4>${esc(word)}</h4>${ipaDisplay ? `<span class="ipa" lang="en-fonipa">${esc(ipaDisplay)}</span>` : ''}</div>${wordButton}</div><div class="reading-meaning">${pos ? `<span class="part-of-speech">${esc(pos)}</span>` : ''}${meaning ? `<span>${esc(meaning)}</span>` : ''}</div>${english ? `<div class="example-line"><p class="example-en">${esc(english)}</p>${exampleButton}</div>` : ''}${chinese ? `<p class="example-zh" lang="zh-Hant">${esc(chinese)}</p>` : ''}</article>`;
   }
   function phraseCard(item) {
     const phrase = pick(item, 'phrase', 'Phrase');

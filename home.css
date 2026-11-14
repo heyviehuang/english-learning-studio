@@ -127,6 +127,18 @@
     .home-main {
         padding-top: 12px
     }
+
+    .topbar {
+        gap: 20px
+    }
+
+    .nav {
+        gap: 22px
+    }
+
+    .top-note {
+        display: none
+    }
 }
 
 @media(max-width:600px) {
@@ -143,6 +155,10 @@
 
     .filters {
         gap: 6px
+    }
+
+    .nav {
+        gap: 12px
     }
 
     .filter-btn {
@@ -195,5 +211,29 @@
 
     .entry-arrow {
         font-size: 20px
+    }
+}
+
+@media(max-width:380px) {
+    .site-shell {
+        padding-right: 14px;
+        padding-left: 14px
+    }
+
+    .nav {
+        gap: 8px
+    }
+
+    .nav a {
+        font-size: 10px
+    }
+
+    .lesson-entry {
+        grid-template-columns: 38px minmax(0, 1fr) 16px;
+        gap: 9px
+    }
+
+    .lesson-entry h2 {
+        font-size: 21px
     }
 }

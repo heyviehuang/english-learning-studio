@@ -90,16 +90,27 @@
 }
 
 .reading-section {
+    display: grid;
+    grid-template-columns: 42px minmax(0, 1fr);
+    column-gap: 16px;
     margin: 0 0 46px;
     scroll-margin-top: 24px
 }
 
 .reading-section-heading {
+    grid-column: 1 / -1;
     display: grid;
-    grid-template-columns: 42px 1fr auto;
-    gap: 15px;
+    grid-template-columns: 42px minmax(0, 1fr) auto;
+    gap: 16px;
     align-items: start;
     margin-bottom: 22px
+}
+
+.reading-grid,
+.speech-unavailable-note,
+.notes-list,
+.notes-empty-large {
+    grid-column: 2
 }
 
 .section-index {
@@ -140,7 +151,10 @@
 
 .reading-card {
     min-width: 0;
-    padding: 13px 8px 14px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 40px;
+    column-gap: 16px;
+    padding: 13px 0 14px;
     border: 0;
     border-bottom: 1px solid var(--line);
     background: transparent;
@@ -148,20 +162,30 @@
 }
 
 .vocab-primary {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 40px;
+    column-gap: 16px;
+    align-items: center
+}
+
+.vocab-label {
     display: flex;
+    min-width: 0;
     flex-wrap: wrap;
     align-items: baseline;
     gap: 0 10px
 }
 
 .reading-card h4 {
-    display: inline;
-    margin: 0 10px 0 0;
+    grid-column: 1 / -1;
+    margin: 0;
     font: 400 22px/1.5 "Playfair Display", Georgia, serif
 }
 
-.vocab-primary h4 {
-    margin-right: 0
+.vocab-label h4 {
+    display: inline;
+    grid-column: auto
 }
 
 .ipa {
@@ -170,8 +194,14 @@
     letter-spacing: .01em
 }
 
+.vocab-primary .speech-button {
+    grid-column: 2;
+    grid-row: 1
+}
+
 .reading-meaning {
-    display: inline-flex;
+    grid-column: 1 / -1;
+    display: flex;
     flex-wrap: wrap;
     gap: 8px;
     margin: 0;
@@ -188,17 +218,22 @@
 }
 
 .example-line {
-    display: flex;
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 40px;
     align-items: flex-start;
-    justify-content: space-between;
     gap: 16px
 }
 
 .example-en,
 .example-zh {
-    margin: 4px 0 0 1px;
+    margin: 4px 0 0;
     font-size: 16px;
     line-height: 1.65
+}
+
+.example-zh {
+    grid-column: 1 / -1
 }
 
 .example-en {
@@ -259,15 +294,25 @@
 }
 
 .discussion-list {
-    border-top: 1px solid var(--line)
+    --discussion-number-width: 42px;
+    --discussion-number-gap: 16px;
+    grid-column: 1 / -1;
+    min-width: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border-top: 0
 }
 
 .discussion-card {
     display: grid;
-    grid-template-columns: 42px 1fr;
-    gap: 16px;
-    padding: 16px 8px;
-    border-bottom: 1px solid var(--line)
+    grid-template-columns: var(--discussion-number-width) minmax(0, 1fr);
+    column-gap: var(--discussion-number-gap);
+    width: 100%;
+    margin: 0;
+    padding: 16px 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 0
 }
 
 .discussion-number {
@@ -288,13 +333,13 @@
 }
 
 .discussion-question-zh {
-    margin-top: 4px !important;
+    margin: 4px 0 0 !important;
     color: var(--muted);
     font-size: 14px
 }
 
 .discussion-followup {
-    margin-top: 11px
+    margin: 11px 0 0
 }
 
 .discussion-followup-en {
@@ -303,7 +348,6 @@
 }
 
 .discussion-followup-zh {
-    margin-top: 3px !important;
     color: var(--muted);
     font-size: 14px
 }
@@ -345,11 +389,27 @@
     .reading-main {
         padding: 26px 0 60px
     }
+
+    .lesson-page .topbar {
+        gap: 20px
+    }
+
+    .lesson-page .nav {
+        gap: 22px
+    }
+
+    .lesson-page .top-note {
+        display: none
+    }
 }
 
 @media(max-width:600px) {
     .reading-main {
         padding: 20px 0 48px
+    }
+
+    .lesson-page .nav {
+        gap: 12px
     }
 
     .reading-header {
@@ -371,11 +431,13 @@
     }
 
     .reading-section {
+        grid-template-columns: 30px minmax(0, 1fr);
+        column-gap: 10px;
         margin-bottom: 36px
     }
 
     .reading-section-heading {
-        grid-template-columns: 30px 1fr;
+        grid-template-columns: 30px minmax(0, 1fr);
         gap: 10px;
         margin-bottom: 16px
     }
@@ -390,7 +452,7 @@
     }
 
     .reading-card {
-        padding: 12px 4px 13px
+        padding: 12px 0 13px
     }
 
     .reading-card h4 {
@@ -423,10 +485,13 @@
         height: 16px
     }
 
+    .discussion-list {
+        --discussion-number-width: 30px;
+        --discussion-number-gap: 10px
+    }
+
     .discussion-card {
-        grid-template-columns: 30px 1fr;
-        gap: 10px;
-        padding: 14px 2px
+        padding: 14px 0
     }
 
     .discussion-question-en {
@@ -451,5 +516,43 @@
 
     .top-note {
         display: none
+    }
+}
+
+@media(max-width:380px) {
+    .site-shell {
+        padding-right: 14px;
+        padding-left: 14px
+    }
+
+    .lesson-page .nav {
+        gap: 8px
+    }
+
+    .lesson-page .nav a {
+        font-size: 10px
+    }
+
+    .reading-section-heading {
+        grid-template-columns: 24px minmax(0, 1fr);
+        gap: 8px
+    }
+
+    .reading-section {
+        grid-template-columns: 24px minmax(0, 1fr);
+        column-gap: 8px
+    }
+
+    .section-total {
+        grid-column: 2
+    }
+
+    .discussion-list {
+        --discussion-number-width: 24px;
+        --discussion-number-gap: 8px
+    }
+
+    .example-line {
+        gap: 6px
     }
 }
