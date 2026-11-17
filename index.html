@@ -1,37 +1,51 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#383E4F">
-  <meta name="description" content="Browse English lessons, vocabulary, and conversation topics.">
-  <title>Fieldnotes - English Lessons</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="home.css">
-  <script src="config.js"></script>
-  <script src="app.js" defer></script>
-</head>
-<body>
-  <div class="site-shell">
-    <header class="topbar">
-      <a class="brand" href="index.html" aria-label="Fieldnotes home"><span class="brand-mark">f.</span><span><span class="brand-name">Fieldnotes</span><span class="brand-sub">An English learning journal</span></span></a>
-      <nav class="nav" aria-label="Main navigation"><a class="active" href="#lessons">Lessons</a><a href="#lessons">Vocabulary</a><a href="#lessons">Practice</a></nav>
-    </header>
-    <main class="home-main" id="lessons">
-      <section class="toolbar" aria-label="Lesson filters">
-        <div class="filters" id="filters"><button class="filter-btn active" type="button" data-filter="all">All lessons</button></div>
-        <label class="search-wrap"><span class="search-icon" aria-hidden="true">&#8981;</span><input id="search" type="search" placeholder="Search lessons..." aria-label="Search lessons"></label>
-      </section>
-      <section class="home-lessons" aria-labelledby="latest-heading">
-        <div class="section-heading"><h1 id="latest-heading">Latest lessons</h1><span id="result-count" aria-live="polite">Loading lessons</span></div>
-        <div class="status" id="status" role="status"><span class="spinner" aria-hidden="true"></span><span>Gathering your lessons...</span></div>
-        <div class="lesson-list" id="lesson-list"></div>
-        <div class="empty" id="empty" hidden>No lessons found. Try another keyword.</div>
-      </section>
-    </main>
-  </div>
-</body>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#383E4F">
+    <meta name="description" content="Browse English lessons, vocabulary, and conversation topics.">
+    <title>Fieldnotes - English Lessons</title>
+    <link rel="icon" type="image/png" href="grammar-icon.png">
+    <link rel="apple-touch-icon" href="grammar-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap"
+      rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="home.css">
+    <script src="config.js"></script>
+    <script src="app.js" defer></script>
+  </head>
+
+  <body>
+    <div class="site-shell">
+      <header class="topbar">
+        <a class="brand" href="index.html" aria-label="Fieldnotes home"><span class="brand-mark">f.</span><span><span
+              class="brand-name">Fieldnotes</span><span class="brand-sub">An English learning journal</span></span></a>
+        <nav class="nav" aria-label="Main navigation"><a class="active" href="#lessons">Lessons</a><a
+            href="#lessons">Vocabulary</a><a href="#lessons">Practice</a></nav>
+      </header>
+      <main class="home-main" id="lessons">
+        <section class="toolbar" aria-label="Lesson filters">
+          <div class="filters" id="filters"><button class="filter-btn active" type="button" data-filter="all">All
+              lessons</button></div>
+          <label class="search-wrap"><span class="search-icon" aria-hidden="true">&#8981;</span><input id="search"
+              type="search" placeholder="Search lessons..." aria-label="Search lessons"></label>
+        </section>
+        <section class="home-lessons" aria-labelledby="latest-heading">
+          <div class="section-heading">
+            <h1 id="latest-heading">Latest lessons</h1><span id="result-count" aria-live="polite">Loading lessons</span>
+          </div>
+          <div class="status" id="status" role="status"><span class="spinner" aria-hidden="true"></span><span>Gathering
+              your lessons...</span></div>
+          <div class="lesson-list" id="lesson-list"></div>
+          <div class="empty" id="empty" hidden>No lessons found. Try another keyword.</div>
+        </section>
+      </main>
+    </div>
+  </body>
+
 </html>
