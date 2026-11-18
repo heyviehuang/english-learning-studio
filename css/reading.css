@@ -9,7 +9,7 @@
 }
 
 .reading-main {
-    max-width: 1040px;
+    max-width: var(--content-width);
     margin: 0 auto;
     padding: 34px 0 80px
 }
@@ -20,11 +20,6 @@
     font-size: 15px;
     font-weight: 600;
     text-decoration: none
-}
-
-.lesson-page .brand-sub {
-    font-size: 12px;
-    letter-spacing: .14em
 }
 
 .back-link:hover {

@@ -1,5 +1,4 @@
-.vocabulary-page .brand-sub{font-size:12px;letter-spacing:.14em}
-.vocabulary-main{max-width:1000px;margin:0 auto;padding:36px 0 70px}
+.vocabulary-main{max-width:var(--content-width);margin:0 auto;padding:36px 0 70px}
 .vocabulary-heading{margin-bottom:25px}
 .vocabulary-heading .eyebrow{font-size:12px;letter-spacing:.16em}
 .vocabulary-heading h1{margin:9px 0 4px;font:400 clamp(36px,5vw,48px)/1.15 "Playfair Display",Georgia,serif}
