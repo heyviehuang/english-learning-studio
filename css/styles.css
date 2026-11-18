@@ -62,15 +62,15 @@ button {
     color: var(--ink)
 }
 
-.brand-mark {
-    width: 34px;
-    height: 34px;
-    display: grid;
-    place-items: center;
+.brand-icon {
+    width: 42px;
+    height: 42px;
+    flex: 0 0 42px;
+    display: block;
+    object-fit: cover;
     border: 1px solid var(--brown);
     border-radius: 50%;
-    color: var(--brown);
-    font: 18px Georgia, serif
+    background: transparent
 }
 
 .brand-name {
