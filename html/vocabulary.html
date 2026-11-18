@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#383E4F">
+    <meta name="description" content="Study vocabulary from Fieldnotes lessons with interactive flashcards.">
+    <title>Vocabulary - Fieldnotes</title>
+    <link rel="icon" type="image/png" href="../assets/grammar-icon.png">
+    <link rel="apple-touch-icon" href="../assets/grammar-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap"
+      rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/vocabulary.css">
+    <script src="../js/config.js"></script>
+    <script src="../js/vocabulary.js" defer></script>
+  </head>
+
+  <body class="vocabulary-page">
+    <div class="site-shell">
+      <header class="topbar">
+        <a class="brand" href="index.html" aria-label="Fieldnotes home"><span class="brand-mark">f.</span><span><span
+              class="brand-name">Fieldnotes</span><span class="brand-sub">An English learning journal</span></span></a>
+        <nav class="nav" aria-label="Main navigation"><a href="index.html">Lessons</a><a class="active"
+            href="vocabulary.html">Vocabulary</a></nav>
+      </header>
+      <main class="vocabulary-main">
+        <header class="vocabulary-heading">
+          <div class="eyebrow">Study mode</div>
+          <h1>Vocabulary</h1>
+          <p>Review lesson words one at a time.</p>
+        </header>
+
+        <section class="vocab-tools" aria-label="Vocabulary filters">
+          <div class="vocab-mode-switch" role="group" aria-label="Word filter">
+            <button class="mode-button is-active" id="all-words" type="button" aria-pressed="true">All words</button>
+            <button class="mode-button" id="saved-words" type="button" aria-pressed="false">Favorites <span
+                id="favorite-count">0</span></button>
+          </div>
+          <label class="topic-select-label" for="topic-select">Topic
+            <select id="topic-select">
+              <option value="all">All topics</option>
+            </select>
+          </label>
+          <label class="vocab-search-label" for="vocab-search">Search
+            <input id="vocab-search" type="search" placeholder="Search words..." autocomplete="off">
+          </label>
+          <button class="shuffle-button" id="shuffle-button" type="button" aria-pressed="false">Shuffle</button>
+        </section>
+
+        <section class="flashcard-area" aria-label="Vocabulary flashcards">
+          <div class="flashcard-status" id="flashcard-status" role="status"><span class="spinner"
+              aria-hidden="true"></span>Loading vocabulary...</div>
+          <div class="flashcard-empty" id="flashcard-empty" hidden>No words match these filters.</div>
+          <div class="flashcard-study" id="flashcard-study" hidden>
+            <div class="study-progress" aria-live="polite"><span id="card-progress">01 / 01</span><span
+                id="card-topic"></span></div>
+            <div class="card-navigation">
+              <button class="arrow-button" id="previous-card" type="button" aria-label="Previous word">&larr;</button>
+              <div class="flashcard-stage" id="flashcard-stage">
+                <button class="favorite-button" id="favorite-button" type="button" aria-label="Add to favorites"
+                  title="Add to favorites">+</button>
+                <div class="flashcard" id="flashcard" tabindex="0" role="group"
+                  aria-label="Flashcard. Click or press Enter to flip.">
+                  <div class="flashcard-rotator" id="flashcard-rotator">
+                    <section class="flashcard-face flashcard-front" aria-label="Word">
+                      <h2 id="front-word"></h2>
+                    </section>
+                    <section class="flashcard-face flashcard-back" id="flashcard-back" aria-label="Word details">
+                      <div id="back-content"></div>
+                    </section>
+                  </div>
+                </div>
+              </div>
+              <button class="arrow-button" id="next-card" type="button" aria-label="Next word">&rarr;</button>
+            </div>
+            <p class="flip-hint" id="flip-hint">Click or tap the card to reveal the details.</p>
+            <p class="swipe-hint">Swipe left or right to navigate. Use the arrow keys on desktop.</p>
+            <div class="deck-actions">
+              <button class="text-button" id="shuffle-action" type="button">Shuffle deck</button>
+              <span class="deck-divider" aria-hidden="true">/</span>
+              <button class="text-button" id="reset-order" type="button">Original order</button>
+            </div>
+            <p class="audio-fallback" id="audio-fallback" hidden>Audio playback is not supported in this browser.</p>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+
+</html>
